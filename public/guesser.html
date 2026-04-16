@@ -2,23 +2,222 @@
 <html>
 
 <head>
-<title>guesser</title>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>guesser</title>
 </head>
 
-<body>
+<body class="mainbody">
 
-    <nav>
+    <!--NAVBAR-->
+    <div class="container-fluid">
+        <div class="navbar navbar-inverse">
+            <div class="navbar navbar-header">
+                <a class="navbar-brand" href="index.html"><span><img src="favicon.png" height="70px"
+                            width="82px"></span></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="guesser.html"><span class="glyphicon glyphicon-question-sign"></span>Guesser</a>
+                </li>
+                <li><a href="about.html"><span class="glyphicon glyphicon-list-alt"></span>About</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="contact.html"><span class="glyphicon glyphicon-envelope"></span>Contact Me! </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--NAVBAR-->
+    <div id="guesserbuttoncontainer">
+        <div id="resetbutton">
+            <div class="buttontext">RESET SCORE</div>
+        </div>
+        <div id="playbutton">
+            <div id="playbuttontriangle"></div>
+        </div>
+        <div id="correctcircle">
+            <div class="buttontext bigtext" id="correctcircleinnertext"></div>
+        </div>
+        <div id="incorrectcircle">
+            <div class="buttontext bigtext" id="incorrectcircleinnertext"></div>
+        </div>
+    </div>
 
-        <a href="/">Home</a> 
-        <a href="/about">About</a>
-        <a href="/guesser">Guesser</a>
+    <div id="guessercontainer">
+        <h1 class="bigtext">Click a button to put a answer in and submit to guess</h1>
+        <div class="answerbutton" id="banditabilityguess">
+            <h2 class="answerbuttontext">banditability</h2>
+            <img class="answerimage" src="https://th.bing.com/th/id/R.37bbba7a5d85f0ff637f5663b7971181?rik=ASy70%2b2bphZATw&riu=http%3a%2f%2fstatic9.cdn.ubi.com%2fresource%2fen-US%2fgame%2frainbow6%2fsiege%2fR6-operators-gadget-bandit_229886.png&ehk=pMnkzy8hkb9RQYFPsOs57UgLJwoS6rTGzHUVwB7zNVI%3d&risl=&pid=ImgRaw&r=0">
+        </div>
 
-    </nav>
+        <div class="answerbutton" id="breachchargeguess">
+            <h2 class="answerbuttontext">breachcharge</h2>
+            <img class="answerimage" src="https://tse1.mm.bing.net/th/id/OIP.s9OcfwkuE9NhW4KK7vz7yAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3">
+        </div>
 
-    <hr>
-    <h1>guesser</h1>
+        <div class="answerbutton" id="breakdoorguess">
+            <h2 class="answerbuttontext">breakdoor</h2>
+            <img class="answerimage" src="https://i.ytimg.com/vi/TPz6N7vz_4w/maxresdefault.jpg">
+        </div>
 
-    <p>This page explains how to guesser.</p>
+        <div class="answerbutton" id="c4guess">
+            <h2 class="answerbuttontext">c4</h2>
+            <img class="answerimage" src="https://tse4.mm.bing.net/th/id/OIP.QVYR6D3rHnyqEXDFV4gctgHaF1?rs=1&pid=ImgDetMain&o=7&rm=3">
+        </div>
+
+        <div class="answerbutton" id="claymoredeployguess">
+            <h2 class="answerbuttontext">claymoredeploy</h2>
+            <img class="answerimage" src="https://cdn-0.r6siegecenter.com/wp-content/uploads/2019/05/claymore_compressed.jpg">
+        </div>
+
+        <div class="answerbutton" id="defusingguess">
+            <h2 class="answerbuttontext">defusing</h2>
+            <img class="answerimage" src="https://gameriv.com/wp-content/uploads/2021/04/R6-defusing.jpg">
+        </div>
+
+        <div class="answerbutton" id="dokicallguess">
+            <h2 class="answerbuttontext">dokicall</h2>
+            <img class="answerimage" src="https://cdn.mos.cms.futurecdn.net/KtRjbozGERxyu8uQTytrrC.jpg">
+        </div>
+
+        <div class="answerbutton" id="doortakedownguess">
+            <h2 class="answerbuttontext">doortakedown</h2>
+            <img class="answerimage" src="data:image/jpeg;base64,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">
+        </div>
+
+        <div class="answerbutton" id="dronethrowguess">
+            <h2 class="answerbuttontext">dronethrow</h2>
+            <img class="answerimage" src="https://th.bing.com/th/id/R.8ef4993baefa51b73f535a36bbe030bd?rik=BFd2HPe4W%2ftOfw&pid=ImgRaw&r=0">
+        </div>
+
+        <div class="answerbutton" id="electricwallguess">
+            <h2 class="answerbuttontext">electricwall</h2>
+            <img class="answerimage" src="https://preview.redd.it/there-is-a-wall-on-the-new-map-that-has-a-projector-with-no-v0-sezwrcs6tc0c1.jpg?auto=webp&s=a8457af37ec264c54920d83e2249fe6330b72bd3">
+        </div>
+
+        <div class="answerbutton" id="flashguess">
+            <h2 class="answerbuttontext">flash</h2>
+            <img class="answerimage" src="https://tse2.mm.bing.net/th/id/OIP.OSHEgvbJJcr7n10jGoEmQgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3">
+        </div>
+
+        <div class="answerbutton" id="fuzechargeguess">
+            <h2 class="answerbuttontext">fuzecharge</h2>
+            <img class="answerimage" src="https://i.ytimg.com/vi/TPTXIrHaI7g/maxresdefault.jpg">
+        </div>
+
+        <div class="answerbutton" id="hitdoorguess">
+            <h2 class="answerbuttontext">hitdoor</h2>
+            <img class="answerimage" src="https://i.redd.it/hc9qk9hl9op31.png">
+        </div>
+
+        <div class="answerbutton" id="impactgrenadeguess">
+            <h2 class="answerbuttontext">impactgrenade</h2>
+            <img class="answerimage" src="https://cdn-0.r6siegecenter.com/wp-content/uploads/2018/12/impact-grenade_compressed.jpg">
+        </div>
+
+        <div class="answerbutton" id="lastopstandingguess">
+            <h2 class="answerbuttontext">lastopstanding</h2>
+            <img class="answerimage" src="https://tse2.mm.bing.net/th/id/OIP.7ZC2aV9apMo6G2191S-DrAHaFj?rs=1&pid=ImgDetMain&o=7&rm=3">
+        </div>
+
+        <div class="answerbutton" id="lionscanguess">
+            <h2 class="answerbuttontext">lionscan</h2>
+            <img class="answerimage" src="https://wallpapercave.com/wp/wp10487972.jpg">
+        </div>
+
+        <div class="answerbutton" id="offrepelguess">
+            <h2 class="answerbuttontext">offrepel</h2>
+            <img class="answerimage" src="https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1n3pUTwfxdCvCDIZM2wFST/d4fa6547a8ff12f082b348e594d4d868/R6S_RAPPEL_LOW.jpg">
+        </div>
+
+        <div class="answerbutton" id="plantingguess">
+            <h2 class="answerbuttontext">planting</h2>
+            <img class="answerimage" src="https://static1.thegamerimages.com/wordpress/wp-content/uploads/2024/06/planting-a-bomb-in-rainbow-six-siege.jpg">
+        </div>
+
+        <div class="answerbutton" id="attackerslossguess">
+            <h2 class="answerbuttontext">attackersloss</h2>
+            <img class="answerimage" src="https://i.ytimg.com/vi/EEeJEmZEZJ8/maxresdefault.jpg">
+        </div>
+
+        <div class="answerbutton" id="defencewinguess">
+            <h2 class="answerbuttontext">defencewin</h2>
+            <img class="answerimage" src="https://i.ytimg.com/vi/tPtxoNeuce0/maxresdefault.jpg">
+        </div>
+
+        <div class="answerbutton" id="skoposdokicallguess">
+            <h2 class="answerbuttontext">skoposdokicall</h2>
+            <img class="answerimage" src="https://tse3.mm.bing.net/th/id/OIP.jk7gszCaBnYkmFTaOJ7ybwAAAA?rs=1&pid=ImgDetMain&o=7&rm=3">
+        </div>
+
+        <div class="answerbutton" id="sledgehammerbreachguess">
+            <h2 class="answerbuttontext">sledgehammerbreach</h2>
+            <img class="answerimage" src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/rainbow-six/2/25/Sledge.jpg">
+        </div>
+
+        <div class="answerbutton" id="smokeguess">
+            <h2 class="answerbuttontext">smoke</h2>
+            <img class="answerimage" src="https://wallpapercave.com/wp/wp4796862.jpg">
+        </div>
+
+        <div class="answerbutton" id="thermitebreachguess">
+            <h2 class="answerbuttontext">thermitebreach</h2>
+            <img class="answerimage" src="https://i.pinimg.com/originals/db/c1/ae/dbc1ae607f791865133ca1a638e87d89.jpg">
+        </div>
+
+        <div class="answerbutton" id="vigleabilityguess">
+            <h2 class="answerbuttontext">vigleability</h2>
+            <img class="answerimage" src="https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6LANw46Bqbl0Qinm9Zx1wu/f561e820bff80ef9cc72bcb8382a8b6f/R6-operator-vigil-elite.png">
+        </div>
+
+    </div>
+    <!--ALL AUDIOS-->
+    <audio id="banditability" src="audios/banditability.mp3"></audio>
+    <audio id="breachcharge" src="audios/breachcharge.mp3"></audio>
+    <audio id="breakdoor" src="audios/breakdoor.mp3"></audio>
+    <audio id="c4" src="audios/C4.mp3"></audio>
+    <audio id="claymoredeploy" src="audios/claymoredeploy.mp3"></audio>
+    <audio id="defusing" src="audios/defusing.mp3"></audio>
+    <audio id="dokicall" src="audios/dokicall.mp3"></audio>
+    <audio id="doortakedown" src="audios/doortakedown.mp3"></audio>
+    <audio id="dronethrow" src="audios/dronethrow.mp3"></audio>
+    <audio id="electricwall" src="audios/electricwall.mp3"></audio>
+    <audio id="flash" src="audios/flash.mp3"></audio>
+    <audio id="fuzecharge" src="audios/fuzecharge.mp3"></audio>
+    <audio id="hitdoor" src="audios/hitdoor.mp3"></audio>
+    <audio id="impactgrenade" src="audios/impactgrenade.mp3"></audio>
+    <audio id="lastopstanding" src="audios/lastopstanding.mp3"></audio>
+    <audio id="lionscan" src="audios/lionscan.mp3"></audio>
+    <audio id="offrepel" src="audios/off repel.mp3"></audio>
+    <audio id="planting" src="audios/planting.mp3"></audio>
+    <audio id="attackersloss" src="audios/roundendattackloss.mp3"></audio>
+    <audio id="defencewin" src="audios/roundenddefencewin.mp3"></audio>
+    <audio id="skoposdokicall" src="audios/skoposdokicall.mp3"></audio>
+    <audio id="sledgehammerbreach" src="audios/sledgehammerbreach.mp3"></audio>
+    <audio id="smoke" src="audios/smoke.mp3"></audio>
+    <audio id="thermitebreach" src="audios/thermitebreach.mp3"></audio>
+    <audio id="vigleability" src="audios/vigle ability.mp3"></audio>
+    <audio id="beep" src="audios/ZBEEP.mp3"></audio>
+    <audio id="wrong" src="audios/Wrong.mp3"></audio>
+    <audio id="right" src="audios/DING.mp3"></audio>
+    <script src="guesserjs.js"></script>
 
 </body>
 

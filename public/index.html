@@ -2,23 +2,62 @@
 <html>
 
 <head>
-<title>Home</title>
+    <meta charset="utf-8">
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Home</title>
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
-<body>
+<body class="mainbody">
 
-    <nav>
+<!--NAVBAR-->
+    <div class="container-fluid">
+        <div class="navbar navbar-inverse">
+            <div class="navbar navbar-header">
+                <a class="navbar-brand" href="index.html"><span><img src="favicon.png" height="70px" width="82px"></span></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="guesser.html"><span
+                            class="glyphicon glyphicon-question-sign"></span>Guesser</a>
+                </li>
+                <li><a href="about.html"><span class="glyphicon glyphicon-list-alt"></span>About</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="contact.html"><span class="glyphicon glyphicon-envelope"></span>Contact Me! </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--NAVBAR END-->
 
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/guesser">Guesser</a>
+<!--MAIN CONTENT-->
+    <div class="container">
+        <h1 id="headertext">RAINBOW SIX SEIGE SOUND GUESSER</h1>
+        <a href="guesser.html">
+            <button class="Home" id="homebuttonone"><h1 class="bigtext">GUESSER</h1></button>
+        </a>
+        <a href="about.html">
+            <button class="Home" id="homebuttontwo"><h1 class="bigtext">ABOUT ME</h1></button>
+        </a>
+    </div>
 
-    </nav>
-
-    <hr>
-    <h1>Welcome to My Website</h1>
-
-    <p>This is my homepage.</p>
 
 </body>
 
