@@ -1,3 +1,10 @@
+/*I have used the root, keyframe and transform/translate to create a functioning css page. most of everything is orginized to be together IE the playbutton 
+trangle is below the playbutton
+or the resetbutton text is below the reset button. i have learned things such a gradients, flex, and and custom fonts and shawdows.*/
+:root {
+    --border-color: whitesmoke;
+}
+
 body {
     background-color: #8394b1;
 }
@@ -89,7 +96,7 @@ a {
 .bigtext {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 85px !important;
-    color: whitesmoke;
+    color: var(--border-color);
 }
 
 .answerbutton {
@@ -100,6 +107,20 @@ a {
     padding: 20px;
     border: 5px solid rgb(28, 43, 59);
     cursor: pointer;
+    transition: filter 0.2s ease;
+}
+
+.answerbutton:hover {
+    filter: brightness(1.30);
+    animation: grow 0.2s forwards;
+}
+
+#playbutton:hover {
+    filter: brightness(1.10);
+}
+
+#resetbutton:hover {
+    filter: brightness(1.10);
 }
 
 @media all and (max-width: 1000px) {
@@ -108,10 +129,17 @@ a {
     }
 }
 
+
 .answerbuttontext {
     font-size: 30px;
     color: #add8e6;
 
+}
+
+@media all and (max-width: 1000px) {
+    .answerbuttontext {
+        font-size: 25px;
+    }
 }
 
 .answerimage {
@@ -125,13 +153,13 @@ a {
     height: 450px;
     background: linear-gradient(to right, #add8e6, #ff69b4);
     border-radius: 50%;
-    border: 5px solid whitesmoke;
+    border: 5px solid var(--border-color);
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -100%);
     cursor: pointer;
-
+    transition: filter 0.2s ease;
 }
 
 #playbuttontriangle {
@@ -144,7 +172,7 @@ a {
 
     border-top: 120px solid transparent;
     border-bottom: 120px solid transparent;
-    border-left: 200px solid rgb(255, 255, 255);
+    border-left: 200px solid var(--border-color);
     position: absolute
 }
 
@@ -153,20 +181,20 @@ a {
     height: 225px;
     background: linear-gradient(to right, #f5db67, #ff6529);
     border-radius: 50%;
-    border: 3px solid whitesmoke;
+    border: 3px solid var(--border-color);
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-220%, 175%);
     cursor: pointer;
     top: 10px;
-
+    transition: filter 0.2s ease;
 }
 
 .buttontext {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 42px;
-    color: whitesmoke;
+    color: var(--border-color);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -178,7 +206,7 @@ a {
     height: 112.5px;
     background: linear-gradient(to left, #43ec34, #388a12);
     border-radius: 50%;
-    border: 3px solid whitesmoke;
+    border: 3px solid var(--border-color);
     position: relative;
     top: 50%;
     left: 50%;
@@ -191,7 +219,7 @@ a {
     height: 112.5px;
     background: linear-gradient(to left, #ec3434, #8a1212);
     border-radius: 50%;
-    border: 3px solid whitesmoke;
+    border: 3px solid var(--border-color);
     position: relative;
     top: 50%;
     left: 50%;
@@ -229,16 +257,28 @@ a {
         "wdth" 100;
     font-size: 3rem;
 }
+
 #optimizedimage {
     max-width: 100%;
     height: auto;
 }
+
 @media all and (max-width: 1000px) {
     #incorrectcircle {
         position: relative;
         top: 0%;
         left: 47%;
         transform: translate(-125%, -100%);
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.15);
     }
 }
 
@@ -259,16 +299,19 @@ a {
         transform: translate(0%, 0%);
     }
 }
+
 @media all and (max-width: 800px) {
     .honk-fontbig {
         font-size: 50px;
     }
 }
+
 @media all and (max-width: 800px) {
     .kalnia-glaze-font {
         font-size: 2rem;
     }
 }
+
 /*CONTACT FORM CSS STYLINH
 /*CONTACT FORM CSS STYLINH
 /*CONTACT FORM CSS STYLINH
